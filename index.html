@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedLearn - Learning Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('asset/hero.jpg') center/cover;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #FF416C, #FF4B2B);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+        }
+        .gradient-bg {
+            background: linear-gradient(45deg, #FF416C, #FF4B2B);
+        }
+        .section-shape {
+            position: relative;
+            overflow: hidden;
+        }
+        .section-shape::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: #fff;
+            transform: skewY(-3deg);
+        }
+        nav {
+            background-color: #111827; /* bg-gray-900 */
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                background-color: #111827; /* bg-gray-900 */
+            }
+            
+            #mobileMenu {
+                background-color: #111827; /* bg-gray-900 */
+            }
+            
+            .gradient-text {
+                color: #ef4444; /* text-red-500 */
+            }
+        }
+        </style>
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo dengan background gelap -->
+                <a href="#" class="text-2xl font-bold flex items-center space-x-2">
+                    <span class="text-red-500">RedLearn</span>
+                </a>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-white hover:text-red-400 transition">HOME</a>
+                    <a href="#about" class="text-white hover:text-red-400 transition">ABOUT</a>
+                    <a href="#trainings" class="text-white hover:text-red-400 transition">TRAININGS</a>
+                    <a href="#readings" class="text-white hover:text-red-400 transition">READINGS</a>
+                    <a href="#suggestion" class="text-white hover:text-red-400 transition">SUGGESTION</a>
+                    <a href="#inquiries" class="text-white hover:text-red-400 transition">CONTACT</a>
+                </div>
+                <!-- Hamburger Button -->
+                <button class="md:hidden bg-red-500 p-2 rounded-lg" onclick="toggleMenu()">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-gray-900 border-t border-gray-800">
+            <a href="#home" class="block px-4 py-2 text-white hover:bg-red-500 hover:text-white transition">HOME</a>
+            <a href="#about" class="block px-4 py-2 text-white hover:bg-red-500 hover:text-white transition">ABOUT</a>
+            <a href="#trainings" class="block px-4 py-2 text-white hover:bg-red-500 hover:text-white transition">TRAININGS</a>
+            <a href="#readings" class="block px-4 py-2 text-white hover:bg-red-500 hover:text-white transition">READINGS</a>
+            <a href="#suggestion" class="block px-4 py-2 text-white hover:bg-red-500 hover:text-white transition">SUGGESTION</a>
+            <a href="#inquiries" class="block px-4 py-2 text-white hover:bg-red-500 hover:text-white transition">CONTACT</a>
+        </div>
+    </nav>>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section min-h-screen flex items-center">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center text-white" data-aos="fade-up">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                    <span class="gradient-text">Reddy</span> Set Learn
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-300">
+                    Transform your learning journey with our innovative platform
+                </p>
+                <div class="flex flex-col md:flex-row justify-center gap-4">
+                    <button class="gradient-bg text-white px-8 py-4 rounded-full hover:opacity-90 transition">
+                        Get Started
+                    </button>
+                    <button class="bg-white text-gray-900 px-8 py-4 rounded-full hover:bg-gray-100 transition">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold mb-6">About Reddorzy</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Selamat datang di Reddorzy, destinasi penginapan eksklusif yang menggabungkan kenyamanan modern 
+                    dengan keramahan Indonesia. Berlokasi strategis di jantung Jakarta, kami menawarkan pengalaman 
+                    menginap yang tak terlupakan dengan standar pelayanan premium.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Lokasi Premium</h3>
+                    <p class="text-gray-600">Akses mudah ke pusat bisnis dan hiburan Jakarta</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Fasilitas Modern</h3>
+                    <p class="text-gray-600">Kamar dengan design kontemporer dan teknologi smart room</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">24/7 Service</h3>
+                    <p class="text-gray-600">Layanan concierge profesional siap membantu setiap saat</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainings Section -->
+    <section id="trainings" class="py-20 bg-gray-50 section-shape">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">Our Trainings</h2>
+            
+            <!-- Past Trainings -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold mb-8 gradient-text" data-aos="fade-up">Past Trainings</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="100">
+                        <img src="asset/website.jpeg" alt="Training 1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="bg-red-100 text-red-600 text-sm px-3 py-1 rounded-full">Completed</span>
+                            </div>
+                            <h4 class="text-xl font-bold mb-2">Advanced Web Development</h4>
+                            <p class="text-gray-600 mb-4">Master modern web technologies and frameworks.</p>
+                            <a href="#" class="gradient-bg text-white px-6 py-2 rounded-full inline-block hover:opacity-90 transition">Watch Recording</a>
+                        </div>
+                    </div>
+                    <!-- Add more past training cards -->
+                </div>
+            </div>
+
+            <!-- Upcoming Trainings -->
+            <div>
+                <h3 class="text-2xl font-bold mb-8 gradient-text" data-aos="fade-up">Upcoming Trainings</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="100">
+                        <img src="asset/ai.jpeg" alt="Upcoming Training 1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="bg-green-100 text-green-600 text-sm px-3 py-1 rounded-full">Enrolling</span>
+                            </div>
+                            <h4 class="text-xl font-bold mb-2">AI Development Fundamentals</h4>
+                            <p class="text-gray-600 mb-4">Learn the basics of AI and machine learning.</p>
+                            <a href="#" class="gradient-bg text-white px-6 py-2 rounded-full inline-block hover:opacity-90 transition">Register Now</a>
+                        </div>
+                    </div>
+                    <!-- Add more upcoming training cards -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Readings Section -->
+    <section id="readings" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">Latest Readings</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg" data-aos="fade-up">
+                    <img src="asset/website2.jpeg" alt="Reading 1" class="w-full h-[400px] object-cover transition duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <span class="text-red-400 text-sm mb-2 block">Technology</span>
+                        <h3 class="text-white text-2xl font-bold mb-4">The Future of Web Development</h3>
+                        <p class="text-gray-300 mb-6">Explore the latest trends and technologies shaping the future of web development.</p>
+                        <a href="#" class="inline-flex items-center text-white hover:text-red-400 transition">
+                            Read More 
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- Add more reading cards -->
+            </div>
+        </div>
+      </section>
+      <!-- Tambahan section Suggestion sebelum Inquiries section -->
+<section id="suggestion" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-4" data-aos="fade-up">Training Suggestions</h2>
+        <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+            Explore our recommended training programs based on current industry demands and trending technologies.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Suggestion Card 1 -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="100">
+                <div class="h-48 overflow-hidden">
+                    <img src="asset/web2.jpeg" alt="Web Development" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-blue-100 text-blue-600 text-sm px-3 py-1 rounded-full">Development</span>
+                        <span class="text-gray-500 text-sm">24 Hours</span>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Full Stack Web Development</h4>
+                    <p class="text-gray-600 mb-4">Master modern web development with MERN stack and advanced frameworks.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-bold gradient-text">$299</span>
+                        <a href="#" class="gradient-bg text-white px-6 py-2 rounded-full inline-block hover:opacity-90 transition">
+                            Get Course Link
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Suggestion Card 2 -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="200">
+                <div class="h-48 overflow-hidden">
+                    <img src="asset/data.jpeg" alt="Data Science" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-purple-100 text-purple-600 text-sm px-3 py-1 rounded-full">Data Science</span>
+                        <span class="text-gray-500 text-sm">32 Hours</span>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Data Science Fundamentals</h4>
+                    <p class="text-gray-600 mb-4">Learn Python, Machine Learning, and Statistical Analysis for Data Science.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-bold gradient-text">$399</span>
+                        <a href="#" class="gradient-bg text-white px-6 py-2 rounded-full inline-block hover:opacity-90 transition">
+                            Get Course Link
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Suggestion Card 3 -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="300">
+                <div class="h-48 overflow-hidden">
+                    <img src="asset/uiux.jpeg" alt="UI/UX Design" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-green-100 text-green-600 text-sm px-3 py-1 rounded-full">Design</span>
+                        <span class="text-gray-500 text-sm">20 Hours</span>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">UI/UX Design Masterclass</h4>
+                    <p class="text-gray-600 mb-4">Create beautiful user interfaces and enhance user experience with modern design principles.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-bold gradient-text">$249</span>
+                        <a href="#" class="gradient-bg text-white px-6 py-2 rounded-full inline-block hover:opacity-90 transition">
+                            Get Course Link
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      <!-- Inquiries Section -->
+      <section id="inquiries" class="py-20 bg-gray-50">
+          <div class="container mx-auto px-4">
+              <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">Contact Us</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                  <div class="bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-right">
+                      <h3 class="text-2xl font-bold mb-6">Get in Touch</h3>
+                      <p class="text-gray-600 mb-8">Have questions or suggestions? We'd love to hear from you!</p>
+                      
+                      <div class="space-y-6 mb-8">
+                          <div class="flex items-center space-x-4">
+                              <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center flex-shrink-0">
+                                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                  </svg>
+                              </div>
+                              <div>
+                                  <h4 class="font-bold text-gray-800">Location</h4>
+                                  <p class="text-gray-600">Jakarta, Indonesia</p>
+                              </div>
+                          </div>
+                          
+                          <div class="flex items-center space-x-4">
+                              <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center flex-shrink-0">
+                                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                  </svg>
+                              </div>
+                              <div>
+                                  <h4 class="font-bold text-gray-800">Email</h4>
+                                  <p class="text-gray-600">contact@reddorzy.com</p>
+                              </div>
+                          </div>
+                          
+                          <div class="flex items-center space-x-4">
+                              <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center flex-shrink-0">
+                                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                  </svg>
+                              </div>
+                              <div>
+                                  <h4 class="font-bold text-gray-800">Phone</h4>
+                                  <p class="text-gray-600">+62 123 456 789</p>
+                              </div>
+                          </div>
+                      </div>
+                      
+                      <a href="#" class="gradient-bg text-white px-8 py-4 rounded-full inline-block hover:opacity-90 transition">
+                          Contact Form
+                      </a>
+                  </div>
+                  
+                  <div class="rounded-2xl overflow-hidden shadow-lg h-[500px]" data-aos="fade-left">
+                      <iframe
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126932.83635966388!2d106.71788851640625!3d-6.229728199999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1659632985386!5m2!1sid!2sid"
+                          width="100%"
+                          height="100%"
+                          style="border:0;"
+                          allowfullscreen=""
+                          loading="lazy"
+                          referrerpolicy="no-referrer-when-downgrade">
+                      </iframe>
+                  </div>
+              </div>
+          </div>
+      </section>
+      
+  
+      <!-- Footer -->
+      <footer class="bg-gray-900 text-white pt-20 pb-10">
+          <div class="container mx-auto px-4">
+              <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                  <div>
+                      <h3 class="text-2xl font-bold gradient-text mb-6">RedLearn</h3>
+                      <p class="text-gray-400 mb-6">Transforming the way you learn and stay. Experience premium comfort and knowledge with us.</p>
+                      <div class="flex space-x-4">
+                          <a href="#" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-red-500 hover:text-red-500 transition">
+                              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07"/></svg>
+                          </a>
+                          <a href="#" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-red-500 hover:text-red-500 transition">
+                              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.95 4.57a9.96 9.96 0 0 1-2.87.79 4.93 4.93 0 0 0 2.16-2.72c-.95.56-2 .97-3.13 1.2a4.92 4.92 0 0 0-8.4 4.48A13.9 13.9 0 0 1 1.64 3.16a4.82 4.82 0 0 0-.67 2.48c0 1.7.87 3.2 2.18 4.09a4.9 4.9 0 0 1-2.23-.61v.06a4.92 4.92 0 0 0 3.93 4.83 4.9 4.9 0 0 1-2.22.08 4.93 4.93 0 0 0 4.6 3.42 9.85 9.85 0 0 1-7.3 2.04 13.87 13.87 0 0 0 7.55 2.21c9.05 0 14-7.5 14-14 0-.21 0-.42-.02-.63A9.94 9.94 0 0 0 24 4.57z"/></svg>
+                          </a>
+                          <a href="#" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-red-500 hover:text-red-500 transition">
+                              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85 0 3.2-.01 3.58-.07 4.85-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07-3.2 0-3.58-.01-4.85-.07-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85 0-3.2.01-3.58.07-4.85.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zm0-2.16c-3.26 0-3.67.01-4.95.07-1.27.06-2.14.26-2.91.56-.78.3-1.44.71-2.1 1.37-.66.66-1.07 1.32-1.37 2.1-.3.76-.5 1.64-.56 2.91C.05 8.33.04 8.74.04 12s.01 3.67.07 4.95c.06 1.27.26 2.14.56 2.91.3.78.71 1.44 1.37 2.1.66.66 1.32 1.07 2.1 1.37.76.3 1.64.5 2.91.56 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.27-.06 2.14-.26 2.91-.56.78-.3 1.44-.71 2.1-1.37.66-.66 1.07-1.32 1.37-2.1.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.14-.56-2.91-.3-.78-.71-1.44-1.37-2.1-.66-.66-1.32-1.07-2.1-1.37-.76-.3-1.64-.5-2.91-.56-1.28-.06-1.69-.07-4.95-.07zm0 5.84c-3.4 0-6.16 2.76-6.16 6.16 0 3.4 2.76 6.16 6.16 6.16 3.4 0 6.16-2.76 6.16-6.16 0-3.4-2.76-6.16-6.16-6.16zM12 16a4 4 0 110-8 4 4 0 010 8zm6.41-11.85a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
+                          </a>
+                      </div>
+                  </div>
+                  
+                  <div>
+                      <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                      <ul class="space-y-4">
+                          <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                          <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
+                          <li><a href="#trainings" class="text-gray-400 hover:text-white transition">Trainings</a></li>
+                          <li><a href="#readings" class="text-gray-400 hover:text-white transition">Readings</a></li>
+                          <li><a href="#inquiries" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                      </ul>
+                  </div>
+                  
+                  <div>
+                      <h4 class="text-lg font-bold mb-6">Services</h4>
+                      <ul class="space-y-4">
+                          <li class="text-gray-400">Online Courses</li>
+                          <li class="text-gray-400">Premium Accommodation</li>
+                          <li class="text-gray-400">Professional Training</li>
+                          <li class="text-gray-400">Learning Resources</li>
+                          <li class="text-gray-400">24/7 Support</li>
+                      </ul>
+                  </div>
+                  
+                  <div>
+                      <h4 class="text-lg font-bold mb-6">Newsletter</h4>
+                      <p class="text-gray-400 mb-4">Subscribe to our newsletter for updates and exclusive offers.</p>
+                      <div class="flex">
+                          <input type="email" placeholder="Your email" class="bg-gray-800 text-white px-4 py-2 rounded-l-full focus:outline-none focus:ring-2 focus:ring-red-500 w-full">
+                          <button class="gradient-bg px-6 rounded-r-full hover:opacity-90 transition">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                          </svg>
+                      </button>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="border-t border-gray-800 pt-8">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <p class="text-gray-400 text-center md:text-left">&copy; 2024 RedLearn. All rights reserved.</p>
+                  <div class="flex justify-center md:justify-end space-x-6">
+                      <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+                      <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+                      <a href="#" class="text-gray-400 hover:text-white transition">Cookie Policy</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+  <script>
+      // Initialize AOS
+      AOS.init({
+          duration: 1000,
+          once: true,
+          offset: 100
+      });
+
+      // Mobile menu toggle
+      function toggleMenu() {
+          const menu = document.getElementById('mobileMenu');
+          menu.classList.toggle('hidden');
+      }
+
+      window.addEventListener('scroll', function() {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 50) {
+            nav.classList.add('bg-gray-900/95');
+            nav.classList.add('shadow-lg');
+        } else {
+            nav.classList.remove('bg-gray-900/95');
+            nav.classList.remove('shadow-lg');
+        }
+    });
+    
+    // Script untuk toggle menu tetap sama
+    function toggleMenu() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('hidden');
+    }
+
+      // Smooth scroll for navigation
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+              e.preventDefault();
+              const target = document.querySelector(this.getAttribute('href'));
+              if (target) {
+                  const mobileMenu = document.getElementById('mobileMenu');
+                  mobileMenu.classList.add('hidden');
+                  
+                  const headerOffset = 80;
+                  const elementPosition = target.getBoundingClientRect().top;
+                  const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                  window.scrollTo({
+                      top: offsetPosition,
+                      behavior: "smooth"
+                  });
+              }
+          });
+      });
+
+      // Add hover effects for cards
+      document.querySelectorAll('.card-hover').forEach(card => {
+          card.addEventListener('mouseenter', function() {
+              this.style.transform = 'translateY(-10px)';
+          });
+          
+          card.addEventListener('mouseleave', function() {
+              this.style.transform = 'translateY(0)';
+          });
+      });
+
+      // Animate numbers
+      function animateValue(obj, start, end, duration) {
+          let startTimestamp = null;
+          const step = (timestamp) => {
+              if (!startTimestamp) startTimestamp = timestamp;
+              const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+              obj.innerHTML = Math.floor(progress * (end - start) + start);
+              if (progress < 1) {
+                  window.requestAnimationFrame(step);
+              }
+          };
+          window.requestAnimationFrame(step);
+      }
+  </script>
+</body>
+</html>
